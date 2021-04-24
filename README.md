@@ -8,10 +8,12 @@ TODO:
 - [x] Randomly generated obstacles
 - [x] Do stuff when hit
 - [ ] Randomly generated obstacle patterns
-- [ ] Horizontal wrapping?
-- [ ] Menu
+- [x] Horizontal wrapping?
+- [x] Menu
+  - [ ] A better menu
 - [ ] Speed scaling
-- [ ] Add "blur" effect behind player
+- [x] Add "blur" effect behind player
+  - [ ] A better effect
 - [ ] Scrolling background
 - [ ] Falling dust effects
 - [ ] Sound effects

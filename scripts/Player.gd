@@ -42,7 +42,7 @@ func _physics_process(delta):
 
   var _collision = move_and_collide(Vector2(horizontal_speed, vertical_speed) * delta, false)
 
-  position.x = clamp(position.x, 0, screen_size.x)
+  position.x = wrapf(position.x, -8, screen_size.x + 8)
 
 
 func _direction_from_input() -> int:

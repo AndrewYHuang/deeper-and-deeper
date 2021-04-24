@@ -2,8 +2,9 @@
 
 [ext_resource path="res://scripts/Obstacle.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.99954, 128 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.99997
+height = 240.0
 
 [node name="Obstacle" type="KinematicBody2D" groups=[
 "obstacles",
