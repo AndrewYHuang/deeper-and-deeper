@@ -6,11 +6,13 @@ export var speed = 400
 export var fall_speed = 200
 export var target_height_ratio = 0.55
 export var squishinees = 0.2
+export var rotation_rate = 20
 
 var screen_size
 var target_y_position
 var ratio_to_target_height = 0
-var direction 
+var direction = 0
+var visual_rotation = 0
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -20,6 +22,8 @@ func start(start_position):
   show()
   position = start_position
   ratio_to_target_height = 0
+  visual_rotation = 0
+  direction = 0
   $CollisionShape2D.disabled = false
 
 # Called when the node enters the scene tree for the first time.
@@ -31,7 +35,7 @@ func _ready():
 func _process(delta):
   position.x = clamp(position.x, 0, screen_size.x)
   position.y = clamp(position.y, 0, screen_size.y)
-  _squash_and_stretch_and_rotate()
+  _squash_and_stretch_and_rotate(delta)
 
 func _physics_process(delta):
   _update_direction_from_input()
@@ -56,7 +60,9 @@ func _update_direction_from_input():
 func _calculate_vertical_speed():
   return (1 - ratio_to_target_height * ratio_to_target_height) * fall_speed
 
-func _squash_and_stretch_and_rotate():
-  var t = Transform2D().rotated(tanh(direction) * PI/2).scaled(Vector2(1 - squishinees * ratio_to_target_height, 1 + squishinees * ratio_to_target_height))
+func _squash_and_stretch_and_rotate(delta):
+  visual_rotation = lerp(visual_rotation, tanh(-direction) * PI/4, rotation_rate * delta)
+  var scale = Vector2(1 - squishinees * ratio_to_target_height, 1 + squishinees * ratio_to_target_height)
+  var t = Transform2D().rotated(visual_rotation).scaled(scale)
 
   $Polygon2D.transform = t
