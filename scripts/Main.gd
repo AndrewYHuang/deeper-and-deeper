@@ -40,4 +40,5 @@ func game_over():
   $ObstacleTimer.stop()
   get_tree().call_group("obstacles", "stop")
   print_debug("GAME OVER")
-  $Menu.show_game_over()
+  $HUD.show_game_over()
+  $Menu.show_game_over(score)

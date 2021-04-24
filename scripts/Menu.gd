@@ -9,7 +9,7 @@ signal start_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  pass # Replace with function body.
+  $Score.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,8 +19,11 @@ func _ready():
 func _on_StartButton_pressed():
   $StartButton.hide()
   $Title.hide()
+  $Score.hide()
   emit_signal("start_game")
 
-func show_game_over():
+func show_game_over(score):
   $Title.show()
+  $Score.show()
+  $Score.text = str("You scored: ", score)
   $StartButton.show()

@@ -26,9 +26,11 @@ func _ready():
   target_y_position = screen_size.y * target_height_ratio
 
 func _process(delta):
+  var direction = _direction_from_input()
+  var ratio_to_target_height = (position.y / target_y_position)
+  _set_trail(ratio_to_target_height)
+
   if movement_enabled:
-    var direction = _direction_from_input()
-    var ratio_to_target_height = (position.y / target_y_position)
     _squash_and_stretch_and_rotate(direction, ratio_to_target_height, delta)
 
 func _physics_process(delta):
@@ -58,8 +60,14 @@ func _squash_and_stretch_and_rotate(direction, ratio_to_target_height, delta):
   visual_rotation = lerp(visual_rotation, tanh(-direction) * PI/4, rotation_rate * delta)
   var scale = Vector2(1 - squishinees * ratio_to_target_height, 1 + squishinees * ratio_to_target_height)
 
-  self.rotation = visual_rotation 
-  self.scale = scale
+  $Polygon2D.rotation = visual_rotation 
+  $Polygon2D.scale = scale
+  $Hitbox.rotation = visual_rotation 
+  $Hitbox.scale = scale
+
+func _set_trail(ratio_to_target_height):
+  $Trail.emitting = ratio_to_target_height > 0.4 && movement_enabled
+
 
 func hit():
   emit_signal("hit")

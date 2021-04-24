@@ -40,7 +40,6 @@ curve = SubResource( 1 )
 [node name="ObstacleSpawnLocation" type="PathFollow2D" parent="ObstacleSpawnPath"]
 position = Vector2( 0, 600 )
 
-[connection signal="start_game" from="Menu" to="." method="_on_Menu_start_game"]
 [connection signal="start_game" from="Menu" to="." method="new_game"]
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

@@ -8,6 +8,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+  $Score.hide()
   pass # Replace with function body.
 
 
@@ -16,4 +17,8 @@ func _ready():
 #  pass
 
 func update_score(score):
+  $Score.show()
   $Score.text = str(score)
+
+func show_game_over():
+  $Score.hide()
