@@ -16,6 +16,7 @@ func _ready():
 func new_game():
   score = 0
   get_tree().call_group("obstacles", "queue_free")
+  get_tree().call_group("spawners", "queue_free")
   $Player.start($StartPosition.position)
   $StartTimer.start()
   Global.game_speed = 400.0
@@ -28,12 +29,13 @@ func _on_StartTimer_timeout():
 func _on_ObstacleTimer_timeout():
   var pattern = randi()
   var offset = randi() % 12
+  var flip = randi() % 2 == 0
 
   var patternSpawner = PatternSpawner.instance()
   add_child(patternSpawner)
 
   patternSpawner.position = $PatternSpawnerPosition.position
-  patternSpawner.spawn(pattern, offset)
+  patternSpawner.spawn(pattern, offset, flip)
   patternSpawner.connect("pattern_complete", self, "_on_PatternSpawner_pattern_complete")
 
 func _on_PatternSpawner_pattern_complete():

@@ -13,10 +13,11 @@ signal pattern_complete
 func _ready():
   pass # Replace with function body.
 
-func spawn(selected_pattern: int, offset: int):
+func spawn(selected_pattern: int, offset: int, flip: bool):
   var pattern = Patterns[selected_pattern % Patterns.size()].instance()
   add_child(pattern)
   pattern.offset(offset*32)
+  if flip: pattern.flip()
 
   $EndOfPattern.position = pattern.get_node("EndOfPattern").position
 

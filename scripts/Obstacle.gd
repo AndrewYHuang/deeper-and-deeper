@@ -25,6 +25,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 func offset(offset):
   position.x = wrapf(position.x + offset, 0, screen_size.x)
 
+func flip():
+  position.x = screen_size.x - position.x
+
 func stop():
   stopped = true
 

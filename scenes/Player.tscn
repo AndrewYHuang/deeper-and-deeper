@@ -40,7 +40,7 @@ gradient = SubResource( 6 )
 width = 3
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 8, 8 )
+extents = Vector2( 8, 3 )
 
 [node name="Player" type="Area2D"]
 script = ExtResource( 1 )
@@ -62,4 +62,5 @@ color = Color( 0.12549, 0.647059, 0.686275, 1 )
 polygon = PoolVector2Array( -8, -8, 8, -8, 8, 8, -8, 8 )
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5 )
 shape = SubResource( 8 )
