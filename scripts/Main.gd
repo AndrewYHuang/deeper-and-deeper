@@ -18,6 +18,7 @@ func new_game():
   get_tree().call_group("obstacles", "queue_free")
   $Player.start($StartPosition.position)
   $StartTimer.start()
+  Global.game_speed = 400.0
 
 func _on_StartTimer_timeout():
   $ObstacleTimer.start()
@@ -46,6 +47,7 @@ func _on_ScoreTimer_timeout():
 func game_over():
   $ScoreTimer.stop()
   $ObstacleTimer.stop()
+  Global.game_speed = 0
   get_tree().call_group("obstacles", "stop")
   print_debug("GAME OVER")
   $HUD.show_game_over()

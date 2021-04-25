@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Pattern.gd" type="Script" id=2]
 
-[node name="Zigzag" type="Node2D"]
+[node name="Simple" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="EndOfPattern" type="Position2D" parent="."]

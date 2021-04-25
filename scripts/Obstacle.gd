@@ -1,6 +1,5 @@
 extends Area2D
 
-export var speed = 400
 var screen_size
 
 var stopped: bool = false
@@ -18,7 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
   if !stopped: 
-    _move_with_velocity(Vector2(0, -speed) * delta)
+    _move_with_velocity(Vector2(0, -Global.game_speed) * delta)
 
 func _on_VisibilityNotifier2D_screen_exited():
   queue_free()

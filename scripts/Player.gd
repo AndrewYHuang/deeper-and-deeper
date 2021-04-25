@@ -2,9 +2,8 @@ extends Area2D
 
 signal hit
 
-export var speed = 400
 export var fall_speed = 200
-export var target_height_ratio = 0.55
+export var target_height_ratio = 0.35
 export var squishinees = 0.2
 export var rotation_rate = 20
 
@@ -37,12 +36,12 @@ func _physics_process(delta):
   var ratio_to_target_height = (position.y / target_y_position)
   var direction = _direction_from_input() if movement_enabled else 0
 
-  var horizontal_speed = direction * speed
+  var horizontal_speed = direction * Global.game_speed * 1
   var vertical_speed = _calculate_vertical_speed(ratio_to_target_height) if movement_enabled else 0
 
   _move_with_velocity(Vector2(horizontal_speed, vertical_speed) * delta)
 
-  position.x = wrapf(position.x, -8, screen_size.x + 8)
+  position.x = wrapf(position.x, 0, screen_size.x)
 
 
 func _direction_from_input() -> int:
