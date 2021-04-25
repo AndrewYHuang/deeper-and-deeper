@@ -2,11 +2,10 @@
 
 [ext_resource path="res://scripts/Obstacle.gd" type="Script" id=1]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 7.99997
-height = 240.0
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.9999, 16.0001 )
 
-[node name="Obstacle" type="KinematicBody2D" groups=[
+[node name="Obstacle" type="Area2D" groups=[
 "obstacles",
 ]]
 collision_mask = 0
@@ -16,12 +15,15 @@ __meta__ = {
 }
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PoolVector2Array( -128, -8, 128, -8, 128, 8, -128, 8 )
+color = Color( 0.12549, 0.647059, 0.686275, 1 )
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-position = Vector2( -3.8147e-06, 4.17233e-07 )
-scale = Vector2( 12.8, 0.8 )
+position = Vector2( -1.19209e-06, -3.45706e-07 )
+scale = Vector2( 1.6, 1.6 )
+
+[connection signal="area_entered" from="." to="." method="_on_Obstacle_area_entered"]

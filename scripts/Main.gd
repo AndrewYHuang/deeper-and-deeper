@@ -1,6 +1,7 @@
 extends Node
 
-export (PackedScene) var Obstacle
+export (PackedScene) var PatternSpawner
+
 var score = 0
 
 # Declare member variables here. Examples:
@@ -24,12 +25,19 @@ func _on_StartTimer_timeout():
 
 
 func _on_ObstacleTimer_timeout():
-  $ObstacleSpawnPath/ObstacleSpawnLocation.offset = randi()
+  var pattern = randi()
+  var offset = randi() % 12
 
-  var obstacle = Obstacle.instance()
-  add_child(obstacle)
-  obstacle.spawn($ObstacleSpawnPath/ObstacleSpawnLocation.position)
+  var patternSpawner = PatternSpawner.instance()
+  add_child(patternSpawner)
 
+  patternSpawner.position = $PatternSpawnerPosition.position
+  patternSpawner.spawn(pattern, offset)
+  patternSpawner.connect("pattern_complete", self, "_on_PatternSpawner_pattern_complete")
+
+func _on_PatternSpawner_pattern_complete():
+  $ObstacleTimer.start()
+  
 
 func _on_ScoreTimer_timeout():
   score += 1
@@ -42,3 +50,5 @@ func game_over():
   print_debug("GAME OVER")
   $HUD.show_game_over()
   $Menu.show_game_over(score)
+
+

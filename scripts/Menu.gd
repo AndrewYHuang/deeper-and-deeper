@@ -17,12 +17,14 @@ func _ready():
 #  pass
 
 func _on_StartButton_pressed():
+  $Overlay.hide()
   $StartButton.hide()
   $Title.hide()
   $Score.hide()
   emit_signal("start_game")
 
 func show_game_over(score):
+  $Overlay.show()
   $Title.show()
   $Score.show()
   $Score.text = str("You scored: ", score)

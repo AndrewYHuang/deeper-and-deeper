@@ -1,6 +1,7 @@
-extends KinematicBody2D
+extends Area2D
 
 export var speed = 400
+var screen_size
 
 var stopped: bool = false
 
@@ -11,24 +12,25 @@ var stopped: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-  pass
+  screen_size = get_viewport_rect().size
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
   if !stopped: 
-    var collision = move_and_collide(Vector2(0, -speed) * delta)
-    if collision:
-      if collision.collider.has_method("hit"): collision.collider.call("hit")
+    _move_with_velocity(Vector2(0, -speed) * delta)
 
 func _on_VisibilityNotifier2D_screen_exited():
   queue_free()
 
-func spawn(spawn_position: Vector2):
-  position = spawn_position
+func offset(offset):
+  position.x = wrapf(position.x + offset, 0, screen_size.x)
 
 func stop():
   stopped = true
 
 func _move_with_velocity(velocity):
   position += velocity
+
+func _on_Obstacle_area_entered(body):
+  if body.has_method("hit"): body.hit()

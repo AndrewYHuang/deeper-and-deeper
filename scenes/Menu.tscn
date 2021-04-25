@@ -20,6 +20,14 @@ shortcut = SubResource( 3 )
 [node name="Menu" type="CanvasLayer"]
 script = ExtResource( 2 )
 
+[node name="Overlay" type="ColorRect" parent="."]
+margin_right = 384.0
+margin_bottom = 576.0
+color = Color( 0, 0, 0, 0.67451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Title" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -59,6 +67,7 @@ margin_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 custom_fonts/font = SubResource( 1 )
+shortcut_in_tooltip = false
 shortcut = SubResource( 4 )
 text = "Start Falling"
 __meta__ = {

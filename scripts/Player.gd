@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 
 signal hit
 
@@ -40,7 +40,7 @@ func _physics_process(delta):
   var horizontal_speed = direction * speed
   var vertical_speed = _calculate_vertical_speed(ratio_to_target_height) if movement_enabled else 0
 
-  var _collision = move_and_collide(Vector2(horizontal_speed, vertical_speed) * delta, false)
+  _move_with_velocity(Vector2(horizontal_speed, vertical_speed) * delta)
 
   position.x = wrapf(position.x, -8, screen_size.x + 8)
 
@@ -73,3 +73,6 @@ func hit():
   emit_signal("hit")
   movement_enabled = false
   set_block_signals(true)
+
+func _move_with_velocity(velocity):
+  position += velocity

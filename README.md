@@ -18,3 +18,4 @@ TODO:
 - [ ] Falling dust effects
 - [ ] Sound effects
 - [ ] Music
+  - [ ] Sync graphics to music
