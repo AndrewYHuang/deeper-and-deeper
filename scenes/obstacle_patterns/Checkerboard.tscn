@@ -1,0 +1,118 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Pattern.gd" type="Script" id=2]
+
+[node name="ZigzagGappy" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="EndOfPattern" type="Position2D" parent="."]
+position = Vector2( 384, 672 )
+
+[node name="51" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 16 )
+
+[node name="22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 144 )
+
+[node name="7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 16 )
+
+[node name="16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 16 )
+
+[node name="55" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 144 )
+
+[node name="20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 144 )
+
+[node name="152" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 272 )
+
+[node name="197" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 272 )
+
+[node name="25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 272 )
+
+[node name="52" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 16 )
+
+[node name="23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 144 )
+
+[node name="8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 16 )
+
+[node name="17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 16 )
+
+[node name="56" parent="." instance=ExtResource( 1 )]
+position = Vector2( 368, 144 )
+
+[node name="21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 144 )
+
+[node name="155" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 272 )
+
+[node name="200" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 272 )
+
+[node name="28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 272 )
+
+[node name="53" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 400 )
+
+[node name="24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 528 )
+
+[node name="9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 400 )
+
+[node name="18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 400 )
+
+[node name="57" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 528 )
+
+[node name="26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 16, 528 )
+
+[node name="153" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 656 )
+
+[node name="198" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 656 )
+
+[node name="27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 656 )
+
+[node name="54" parent="." instance=ExtResource( 1 )]
+position = Vector2( 368, 400 )
+
+[node name="29" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 528 )
+
+[node name="10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 400 )
+
+[node name="19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 400 )
+
+[node name="58" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 528 )
+
+[node name="30" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 528 )
+
+[node name="156" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 656 )
+
+[node name="201" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 656 )
+
+[node name="31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 368, 656 )

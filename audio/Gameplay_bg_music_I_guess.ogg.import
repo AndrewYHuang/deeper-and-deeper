@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Gameplay_bg_music_I_guess.ogg-5f6959e1e7299f9c59cd892a336eebe5.oggstr"
+
+[deps]
+
+source_file="res://audio/Gameplay_bg_music_I_guess.ogg"
+dest_files=[ "res://.import/Gameplay_bg_music_I_guess.ogg-5f6959e1e7299f9c59cd892a336eebe5.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
