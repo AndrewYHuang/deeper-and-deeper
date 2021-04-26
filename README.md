@@ -19,6 +19,8 @@ TODO:
   - [ ] A better effect
 - [ ] Scrolling background
 - [ ] Falling dust effects
-- [ ] Sound effects
-- [ ] Music
+- [x] Sound effects
+  - [ ] Better sound effects
+- [x] Music
+  - [ ] Better music
   - [ ] Sync graphics to music
