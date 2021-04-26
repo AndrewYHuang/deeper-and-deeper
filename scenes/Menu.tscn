@@ -37,9 +37,10 @@ margin_right = 179.0
 margin_bottom = 72.0
 grow_horizontal = 2
 custom_fonts/font = SubResource( 1 )
-text = "I need to name this"
+text = "AMVD&D
+A Minimum Viable Deeper & Deeper"
 align = 1
-valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -52,7 +53,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = SubResource( 2 )
-text = "Your score was ass"
+text = "Score"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

@@ -11,6 +11,7 @@ var stopped: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+  $Polygon2D.color = Global.foreground
   screen_size = get_viewport_rect().size
 
 
@@ -36,3 +37,6 @@ func _move_with_velocity(velocity):
 
 func _on_Obstacle_area_entered(body):
   if body.has_method("hit"): body.hit()
+
+func set_color(color: Color):
+  $Polygon2D.color = color

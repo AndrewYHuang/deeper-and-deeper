@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/obstacle_patterns/ZigzagShort.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/PatternSpawner.gd" type="Script" id=2]
 [ext_resource path="res://scenes/obstacle_patterns/Simple.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/obstacle_patterns/RightTunnel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/obstacle_patterns/ZigzagGappy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/obstacle_patterns/Checkerboard.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/obstacle_patterns/ZigzagOhFuckOhNo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/obstacle_patterns/SimpleHarder.tscn" type="PackedScene" id=8]
 
 [node name="PatternSpawner" type="Node2D" groups=[
 "spawners",
 ]]
 script = ExtResource( 2 )
-Patterns = [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ]
+PatternSets = [ [ ExtResource( 3 ) ], [ ExtResource( 6 ), ExtResource( 3 ) ], [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ) ], [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 8 ) ], [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 8 ) ], [ ExtResource( 6 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 7 ), ExtResource( 8 ) ] ]
 
 [node name="EndOfPattern" type="VisibilityNotifier2D" parent="."]
 scale = Vector2( 38.4, 1.6 )

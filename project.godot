@@ -14,6 +14,10 @@ config/name="Deeper And Deeper"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+mix_rate=48000
+
 [autoload]
 
 Global="*res://scripts/Global.gd"

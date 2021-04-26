@@ -5,7 +5,7 @@ signal hit
 export var fall_speed = 200
 export var target_height_ratio = 0.35
 export var squishinees = 0.2
-export var rotation_rate = 20
+export var rotation_rate = 40
 
 var screen_size
 var target_y_position

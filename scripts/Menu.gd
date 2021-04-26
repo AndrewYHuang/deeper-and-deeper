@@ -27,5 +27,5 @@ func show_game_over(score):
   $Overlay.show()
   $Title.show()
   $Score.show()
-  $Score.text = str("You scored: ", score)
+  $Score.text = str("You fell: ", score, "m")
   $StartButton.show()

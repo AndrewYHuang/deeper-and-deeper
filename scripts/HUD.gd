@@ -9,8 +9,6 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
   $Score.hide()
-  pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -18,7 +16,10 @@ func _ready():
 
 func update_score(score):
   $Score.show()
-  $Score.text = str(score)
+  $Score.text = str(score, "m")
+
+func update_difficulty(_score):
+  pass
 
 func show_game_over():
   $Score.hide()

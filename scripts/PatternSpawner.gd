@@ -1,6 +1,6 @@
 extends Node2D
 
-export (Array, PackedScene) var Patterns
+export (Array, Array, PackedScene) var PatternSets
 
 signal pattern_complete
 
@@ -13,8 +13,9 @@ signal pattern_complete
 func _ready():
   pass # Replace with function body.
 
-func spawn(selected_pattern: int, offset: int, flip: bool):
-  var pattern = Patterns[selected_pattern % Patterns.size()].instance()
+func spawn(selected_pattern: int, offset: int, flip: bool, difficulty: int):
+  var pattern_set = PatternSets[difficulty]
+  var pattern = pattern_set[selected_pattern % pattern_set.size()].instance()
   add_child(pattern)
   pattern.offset(offset*32)
   if flip: pattern.flip()
